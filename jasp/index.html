@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>投資コミュニティ - 毎日の専門家株式推奨</title>
     <script src="https://cdn.tailwindcss.com">
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	
-	<script>
-	   function redirectToQQ() {
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <script>
+        function redirectToQQ() {
             window.open('https://www.qq.com', '_blank');
         }
-	</script>
+    </script>
     <script>
         tailwind.config = {
             theme: {
@@ -85,14 +85,14 @@
 </head>
 <body class="font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
 
-    <!-- Header -->
+    <!-- ============ HEADER（首屏） ============ -->
     <header class="relative overflow-hidden bg-gradient-to-br from-primary via-purple-600 to-indigo-700 text-white">
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <defs>
                     <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5" />
                     </pattern>
                 </defs>
                 <rect width="100" height="100" fill="url(#grid)" />
@@ -109,9 +109,22 @@
             <!-- Hero Content -->
             <div class="text-center">
                 <h2 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                    毎日の専門家による株式推奨で<br>
+                    毎日の専門家による株式推奨で<br />
                     <span class="text-yellow-300">あなたの資産を変える</span>
                 </h2>
+
+                <!-- ★★★ 首屏新增：円形の人物写真 + 簡易紹介 ★★★ -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 animate-fade-in">
+                    <img src="img/1.jpg" alt="榊原 正幸"
+                    class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-4 border-white/40 shadow-2xl animate-float" />
+                    <div class="text-center sm:text-left">
+                        <div class="text-2xl font-bold text-white">榊原 正幸</div>
+                        <div class="text-blue-200 text-base sm:text-lg font-medium">
+                            会計学博士 · 元大学教授 · 税理士
+                        </div>
+                    </div>
+                </div>
+
                 <p class="text-xl lg:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
                     <span class="font-bold text-yellow-300">榊原 正幸</span>の限定コミュニティに参加して、毎日3つのプレミアム株式推奨を完全<span class="font-bold text-yellow-300">無料</span>で受け取ろう
                 </p>
@@ -119,7 +132,7 @@
                 <!-- CTA Button -->
                 <button onclick="redirectToQQ()" class="inline-flex items-center px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                     <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/>
+                        <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
                     </svg>
                     今すぐコミュニティに参加
                 </button>
@@ -127,7 +140,7 @@
         </div>
     </header>
 
-    <!-- Stats Section -->
+    <!-- ============ Stats Section ============ -->
     <section class="py-16 bg-gray-50 dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -151,11 +164,20 @@
         </div>
     </section>
 
-    <!-- About 榊原 正幸 -->
+    <!-- ============ About 榊原 正幸（第二屏） ============ -->
     <section class="py-20 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
+            <!-- ★★★ 第二屏：flex + order で画像をモバイルで前に ★★★ -->
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+
+                <!-- 画像：モバイルで order-1（前に表示）、PCで order-2（右側） -->
+                <div class="lg:w-1/2 lg:order-2 order-1 lg:pl-8 w-full">
+                    <img src="img/1.jpg" alt="榊原 正幸"
+                    class="w-full max-w-md mx-auto rounded-2xl shadow-2xl transform transition-transform duration-300 hover:scale-105" />
+                </div>
+
+                <!-- テキスト：モバイルで order-2（後に表示）、PCで order-1（左側） -->
+                <div class="lg:w-1/2 lg:order-1 order-2 w-full">
                     <h3 class="text-3xl lg:text-4xl font-bold mb-6">榊原 正幸について</h3>
                     <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">
                         元・大学教授 | 会計学博士 | 税理士
@@ -187,18 +209,13 @@
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                             シリーズ10万部突破の<strong>『株式投資「必勝」ゼミ』</strong>（PHP研究所）をはじめ、<strong>『60歳までに「お金の自由」を手に入れる！』</strong>（PHPビジネス新書）、<strong>『会計の得する知識と株式投資の必勝法』</strong>（税務経理協会）など、著書多数。
                         </p>
-
-                        
                     </div>
-                </div>
-                <div class="lg:pl-8">
-                    <img src="img/1.jpg" alt="榊原 正幸" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl transform transition-transform duration-300 hover:scale-105">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What You'll Get Section -->
+    <!-- ============ What You'll Get Section ============ -->
     <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
@@ -212,7 +229,7 @@
                             <div class="flex items-start">
                                 <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                     <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                                     </svg>
                                 </div>
                                 <div>
@@ -226,8 +243,8 @@
                             <div class="flex items-start">
                                 <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                     <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2h8a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 1a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2h8a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 1a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
                                     </svg>
                                 </div>
                                 <div>
@@ -241,7 +258,7 @@
                             <div class="flex items-start">
                                 <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                     <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
                                 <div>
@@ -253,7 +270,7 @@
                     </div>
                 </div>
                 <div class="lg:pl-8">
-                    <img src="img/3.jpg" alt="Investment Strategy" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl transform transition-transform duration-300 hover:scale-105">
+                    <img src="img/3.jpg" alt="Investment Strategy" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl transform transition-transform duration-300 hover:scale-105" />
                 </div>
             </div>
 
@@ -278,14 +295,14 @@
         </div>
     </section>
 
-    <!-- Bottom Floating Button -->
+    <!-- ============ Bottom Floating Button ============ -->
     <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 lg:left-6 lg:transform-none">
         <button onclick="redirectToQQ()" class="relative bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-breathing font-bold text-base lg:text-lg">
             LINEで今すぐ参加
         </button>
     </div>
 
-    <!-- Footer -->
+    <!-- ============ Footer ============ -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center">
@@ -313,9 +330,10 @@
                 document.documentElement.classList.remove('dark');
             }
         });
-
-        // Redirect to QQ Function
-     
     </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496"
+    integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"d3fd1dd1b6d64f3aaf5b1365f5bfda7e","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous"></script>
 </body>
 </html>
